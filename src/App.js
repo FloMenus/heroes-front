@@ -8,6 +8,8 @@ import EditHero from "./pages/EditHero";
 import DeleteHero from "./pages/DeleteHero";
 import PowerHero from "./pages/PowerHero";
 
+import "./index.css";
+
 function App() {
   return (
     <BrowserRouter>

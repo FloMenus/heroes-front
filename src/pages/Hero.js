@@ -16,29 +16,26 @@ function Hero() {
     setHero(response);
   };
 
-
   if (!hero) {
     return <div>Loading...</div>;
   }
   return (
     <>
-    <div>
-      <p>{hero.name}</p>
-      <p>{hero.age}</p>
-      <p>Powers:</p>
-      <ul>
-        {hero.power.map((power) => (
-          <li>
-            <p>{power}</p>
-          </li>
-        ))}
-      </ul>
-      {hero.isAlive ? <p>Status: Alive</p> 
-      : 
-      <p>Status: Dead</p>} 
-      <img src={hero.image} alt={hero.slug}></img>
-    </div>
-    <Link to={`/${hero.slug}/edit`}>Edit</Link>
+      <div>
+        <p>{hero.name}</p>
+        <p>{hero.age}</p>
+        <p>Powers:</p>
+        <ul>
+          {hero.power.map(power => (
+            <li key={power}>
+              <p>power</p>
+            </li>
+          ))}
+        </ul>
+        {hero.isAlive ? <p>Status: Alive</p> : <p>Status: Dead</p>}
+        <img src={hero.image} alt={hero.slug}></img>
+      </div>
+      <Link to={`/${hero.slug}/edit`}>Edit</Link>
     </>
   );
 }
