@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function EditHero() {
   const navigate = useNavigate();
@@ -60,16 +61,16 @@ function EditHero() {
   };
 
   return (
-    <div>
-      <h2>Edit {slug}</h2>
-      {!hero ? (
-        <div>Loading...</div>
-      ) : (
+    <div className="flex flex-col">
+      <Navbar />
+
+      <div class="card w-80 bg-base-100 shadow-xl mt-14 bg-sky-400 m-auto mb-2">
+        <div class="card-body">
+        <h2 className="text-xl capitalize font-semibold text-center mb-5">Edit {slug}</h2>
         <form
           onSubmit={updateHero}
-          className="flex flex-col gap-5 bg-red-400 w-3/5 form-control"
+          className="flex flex-col gap-5 form-control"
         >
-          {console.log(hero)}
           <input
             type="text"
             name="slug"
@@ -129,9 +130,14 @@ function EditHero() {
             />
           </label>
 
-          <button type="submit">Submit</button>
+          <button className="btn btn-primary" type="submit">Submit</button>
         </form>
-      )}
+        </div>
+      </div>
+
+
+
+
     </div>
   );
 }
